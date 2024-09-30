@@ -15,7 +15,7 @@ def summary():
         sentiment_labels = ["Positive", "Negative"]
 
         pie_fig, pie_ax = plt.subplots()
-        pie_ax.pie(sentiment_counts, labels=sentiment_labels, autopct='%1.1f%%', startangle=90)
+        pie_ax.pie(sentiment_counts, labels=sentiment_labels, colors=["green", "red"], autopct='%1.1f%%', startangle=90)
         pie_ax.axis('equal')
 
         col1, col2, col3 = st.columns([0.1, 0.8, 0.1])

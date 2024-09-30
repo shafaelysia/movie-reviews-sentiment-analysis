@@ -4,34 +4,28 @@ def movies_list():
     with st.container():
         st.header("Movies List")
 
-        df = st.session_state.data
+        unique_movies = st.session_state.movies_list
 
-        unique_movies = df[['movie_title', 'release_year']].drop_duplicates()
         recent_movies = unique_movies[unique_movies['release_year'] >= 2022]
         classic_movies = unique_movies[unique_movies['release_year'] < 2022]
 
         st.subheader("Recent Movies (2022-2023)")
         st.dataframe(
-            recent_movies,
+            recent_movies["movie_title"],
             use_container_width=True,
             hide_index=True,
             column_config={
                 "movie_title": "Movie Title",
-                "release_year": st.column_config.TextColumn(
-                    "Release Year"
-                )
-            }
+            },
+            selection_mode="single-row"
         )
 
         st.subheader("Classic Movies (Before 2000)")
         st.dataframe(
-            classic_movies,
+            classic_movies["movie_title"],
             use_container_width=True,
             hide_index=True,
             column_config={
                 "movie_title": "Movie Title",
-                "release_year": st.column_config.TextColumn(
-                    "Release Year"
-                )
             }
         )
