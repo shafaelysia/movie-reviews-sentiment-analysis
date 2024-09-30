@@ -4,7 +4,7 @@ This project utilizes Natural Language Processing (NLP) to analyze sentiments fr
 The goal is to understand how viewers feel about movies by classifying reviews into three categories:
 **positive** and **negative** sentiments.
 ## Web App
-
+The web application is hosted on Streamlit Cloud and is accessible via the following link: [Movie Reviews Sentiment Analysis Dashboard](https://movie-reviews-sentiment-analysis.streamlit.app/)
 ## Data Collection
 The dataset consists of reviews for 20 movies scraped from **IMDb**, with each movie having its 100 most voted reviews.
 These 20 movies include a combination of 10 classic films and 10 recent releases (2022-2023). The scraping process was
